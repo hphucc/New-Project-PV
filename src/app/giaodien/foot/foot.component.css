@@ -1,0 +1,529 @@
+                    /*-------------- FOOTER ----------------*/
+
+                    .clear {
+                        clear:both;
+                    }
+
+                    .footer {
+                        position: relative;
+                        top: 107px;
+                        width: 100%;
+                        background: #fafbfd;
+                        border-top: 3px solid #d42333;
+                        box-sizing: border-box;
+                    }
+                    
+                    .footer_wrapper {
+                        position: relative;
+                        width: 100%;
+                        box-sizing: border-box;
+                    }
+                    
+                    .head_footer_top {
+                        position: absolute;
+                        width: 100%;
+                        height: 100px;
+                        border-bottom: 1px solid #e8e8e8;
+                    }
+                    
+                    .footer_wrapper_con {
+                        width: 100%;
+                        height: 100%;
+                        margin: 0 auto;
+                        background: #fafbfd;
+                        box-sizing: border-box;
+                    
+                    
+                    }
+                    
+                                /*--- FOOTER TOP LEFT ---*/
+                    
+                    .footer_top {
+                        width: 85%;
+                        margin: 0 auto;
+                    
+                    }
+                    
+                    
+                    .footer_top_left {
+                        width: 59%;
+                        height: 100px;
+                        float: left;
+                    }
+                    
+                    .list_footer_top_left {
+                        width: 33%;
+                        height: 100%;
+                        box-sizing: border-box;
+                        padding-top: 28px;
+                        padding-left: 20px;
+                        float: left;
+                        border-left: 1px solid #e8e8e8;
+                    }
+                    
+                    .img_footer_top_left {
+                        width: 50px;
+                        height: 50px;
+                        box-sizing: border-box;
+                        float: left;
+                    }
+                    
+                    .img_footer_top_left > img {
+                        width: 100%;
+                    }
+                    
+                    .text_footer_top_left {
+                        width: 150px;
+                        height: 30px;
+                        box-sizing: border-box;
+                        float: left;
+                        margin-top: 10px;
+                        text-transform: uppercase;
+                        font-size: 12px;
+                        font-weight: bold;
+                        line-height: 30px;
+                        color: #666666;
+                        padding-left: 5px;
+                    }
+                    
+                            /*------- FOOTER RIGHT ---------*/
+                    
+                    .footer_top_right {
+                        width: 41%;
+                        height: 100px;
+                        float:right;
+                        box-sizing: border-box;
+                        padding-top: 18px;
+                        padding-left: 20px;
+                    }
+                    
+                    .img_footer_top_right {
+                        width: 70px;
+                        height: 70px;
+                        box-sizing: border-box;
+                        float: left;
+                    }
+                    
+                    .img_footer_top_right > img {
+                        width: 100%;
+                    }
+                    
+                    
+                    .search_footer_right {
+                        width: 350px;
+                        height: 70px;
+                        float: left;
+                        padding-left: 20px;
+                    }
+                    
+                    .dkntb {
+                        width: 100%;
+                        height: 30px;
+                        font-weight: bold;
+                        font-size: 13px;
+                        line-height: 20px;
+                        box-sizing: border-box;
+                    }
+                    
+                    .search_footer_right_wrapper {
+                        width: 100%;
+                        height: 40px;
+                        box-sizing: border-box; 
+                        border-radius: 5px;
+                    }
+                    
+                    .icon_search_footer_right {
+                        width: 45px;
+                        height:40px;
+                        padding-bottom: 5px;
+                        box-sizing: border-box;
+                        float: left;
+                    }
+                    
+                    .icon_search_footer_right > img {
+                        width: 100%;
+                    }
+                    
+                    .input_search_footer_right {
+                        position: relative;
+                        width: 275px;
+                        height: 37px;
+                        float: left;
+                        box-sizing: border-box;
+                        line-height: 40px;
+                        border: 1px solid #d2d2d2;
+                        margin-top: 2px;
+                        padding-left: 10px;
+                        outline: #d42333;
+                    }
+                    
+                    .text_input_search_footer_right {
+                        position: relative;
+                        left: 20px;
+                        bottom: 2px;
+                        width: 78%;
+                        height: 36px;
+                        box-sizing: border-box;
+                        outline: none;
+                        border: none;
+                        background: none;
+                        opacity: .7;
+                    }
+                    
+                    
+                    .button_search_footer_top_right {
+                        width: 73px;
+                        height: 37px;
+                        line-height: 38px;
+                        box-sizing: content-box;
+                        border-radius: 0px 5px 5px 0px;
+                        text-transform: uppercase;
+                        background: #d42333;
+                        font-weight: bold;
+                        color: #fff;
+                        float:left;
+                        font-size: 12px;
+                        text-align: center;
+                        margin-top: 2px;
+                        cursor: pointer;
+                    }
+                    
+                    
+                            /*------- FOOTER MID -----------*/
+                    
+                    .footer_mid_wrapper {
+                        width: 100%;
+                        background: #fff;
+                        box-sizing: border-box;
+                        border-top:1px solid #e8e8e8;
+                    
+                    }
+                    
+                    .footer_mid {
+                        width: 85%;
+                        background: white;
+                        margin: 0 auto;
+                        padding-top: 20px;
+                    
+                    }
+                    
+                    ul {
+                        margin: 0;
+                        padding: 0;
+                    }
+                    
+                    li {
+                        list-style: none;
+                    }
+                    
+                    a {
+                        text-decoration: none;
+                    }
+                    
+                    .htkh {
+                        width: 19%;
+                        float: left;
+                        box-sizing: content-box;
+                        text-align: left;
+                    
+                    } /*-- HỖ TRỢ KHÁCH HÀNG --*/
+                    
+                    .htkh > li:hover a {
+                        color: #d42333;
+                    
+                    }   /*--- HOVER HỖ TRỢ KHÁCH HÀNG ---*/
+                    
+                    .csmhvbh {
+                        float: left;
+                        box-sizing: content-box;
+                        padding-right: 50px;
+                    
+                    } /*-- CHÍNH SÁCH MUA HÀNG VÀ BẢO HÀNH --*/
+                    
+                    .csmhvbh > li:hover a {
+                        color: #d42333;
+                    
+                    }  /*---- HOVER CHÍNH SÁCH MUA HÀNG VÀ BẢO HÀNH ----*/
+                    
+                    .ttpv {
+                        float: left;
+                        box-sizing: content-box;
+                        padding-right: 50px;
+                    
+                    } /*-- THÔNG TIN PHONG VŨ --*/
+                    
+                    .ttpv > li:hover a {
+                        color: #d42333;
+                    
+                    } /*--- HOVER THÔNG TIN PHONG VŨ ---*/
+                    
+                    .title_htkh {
+                        font-weight: bold;
+                        color: #212121;
+                        font-size: 13px;
+                        margin-bottom: 17px;
+                    
+                    } /*--- TITLE HỖ TRỢ KHÁCH HÀNG ---*/
+                    
+                    .htkh > li > img {
+                        width: 100%;
+                    }
+                    
+                    .htkh > li > a {
+                        font-size: 12px;
+                        color: #333333;
+                        display: block;
+                        padding: 5px 0px;
+                    }
+                    
+                    .csmhvbh > li > a {
+                        font-size: 12px;
+                        color: #333333;
+                        display: block;
+                        padding: 5px 0px;
+                    }
+                    
+                    .ttpv > li > a {
+                        font-size: 12px;
+                        color: #333333;
+                        display: block;
+                        padding: 5px 0px;
+                    }
+                                    /*-------------- CỘNG ĐỒNG PHONG VŨ -------------*/
+                    
+                    .cdpv {
+                        width: 16%;
+                        float: left;
+                    }
+                    
+                    .title_cdpv {
+                        font-weight: bold;
+                        color: #212121;
+                        font-size: 13px;
+                        margin-bottom: 17px;
+                    }
+                    
+                    .icon_cdpv {
+                        width: 170px;
+                        height: 30px;
+                        line-height: 30px;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .img_icon_cdpv {
+                        width:30px;
+                        height:30px;
+                        box-sizing: border-box;
+                        float: left;
+                    }
+                    
+                    .img_icon_cdpv > img {
+                        width: 100%;
+                    }
+                    
+                    .text_icon_cdpv {
+                        font-size: 12px;
+                        color: #333333;
+                        display: block;
+                        margin-left: 5px;
+                        float: left;
+                    }
+                    
+                    .icon_cdpv:hover div {
+                        color: #d42333;
+                        cursor: pointer;
+                    }
+                    
+                    
+                                /*------ ĐÃ NHẬN THÔNG BÁO BỘ CÔNG THƯƠNG -------*/
+                    
+                    .noti_footer {
+                        width: 22%;
+                        float: right;
+                    }
+                    
+                    .img_noti_footer {
+                        width: 80%;
+                        height: 70px;
+                    
+                    }
+                    
+                    .img_noti_footer > img {
+                        width: 100%;
+                    }
+                    
+                    .contact_footer {
+                        width: 80%;
+                        margin-top: 20px;
+                        color: #777;
+                        font-size: 14px;
+                        line-height: 20px;
+                        margin-left: 15px;
+                    }
+                    
+                    .text_contact_footer {
+                        color: #333;
+                    }
+                    
+                    
+                                    /*--------------------- FOOTER LEFT ---------------------*/
+                    
+                    .footer_thanh_toan{
+                        width: 100%;
+                        padding-bottom: 25px;
+                        margin: 0 auto;
+                    }
+                        
+                        /*--------------- FOOTER BOT LEFT ---------------*/
+                    
+                    .footer_bot_left {
+                        width: 22%;
+                        float:left;
+                    }
+                    
+                    .title_fbl {
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding:7px 5px;
+                        margin-bottom: 8px;
+                    }
+                    
+                    .content_fbl {
+                        width: 25%;
+                        height: 100%;
+                        float: left;
+                        cursor: pointer;
+                    }
+                    
+                    .content_fbl:hover div {
+                        color: #d42333;
+                    }
+                    
+                    .img_fbl {
+                        width: 30px;
+                        height: 30px;
+                        margin: 0 auto;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .img_fbl > img {
+                        width: 100%;
+                    }
+                    
+                    .text_fbl {
+                        font-size: 13px;
+                        text-align: center;
+                    }
+                    
+                            /*--------------- FOOTER BOT RIGHT ---------------*/
+                    
+                    .footer_bot_right {
+                        width: 78%;
+                        height: 100px;
+                        box-sizing: border-box;
+                        float: right;
+                    }
+                    
+                    .img_fbr {
+                        margin-left: 7px;
+                    }
+                    
+                    .title_fbr {
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding:7px 5px;
+                        margin-bottom: 8px;
+                    }
+                    
+                        /*---------------- FOOTER BOT ----------------*/
+                    
+                    
+                    .footer_bot {
+                        width: 100%;  
+                        height: 300px;
+                        border-top:1px solid #e8e8e8;
+                        box-sizing: border-box;
+                    }
+                    
+                    .footer_word {
+                        width: 85%;
+                        margin: 0 auto;
+                        padding-top: 12px;
+                        text-align: justify;
+                        box-sizing: border-box;
+                    }
+                    
+                    .footer_word > div {
+                        display: inline;
+                        font-size: 11px;
+                        color: #696969;
+                        cursor: pointer;
+                    }
+                    
+                    .footer_word div:hover {
+                        text-decoration: underline;
+                    }
+                    
+                    
+                                    /*--------------- FOOTER BOT BOT --------------*/
+                    
+                    .footer_bot_bot_wrapper {
+                        width: 100%;
+                        border-top: 1px solid #e8e8e8;
+                    }
+                    
+                    .footer_bot_bot {
+                        width: 85%;
+                        margin: 0 auto;
+                        padding: 20px 10px;
+                        box-sizing: border-box;
+                        background: white; 
+                    }
+                    
+                    .left_footer_bot_bot {
+                        width: 40%;
+                        height: 70px;
+                        float: left;
+                    
+                    }
+                    
+                    .right_footer_bot_bot {
+                        width: 60%;
+                        height: 70px;
+                        float: right;
+                        box-sizing: border-box;
+                    
+                    }
+                    
+                    .title_left_fbb {
+                        width: 100%;
+                        height: 30px;
+                        font-weight: bold;
+                        color: #676767;
+                        font-size: 14px;
+                    }
+                    
+                    .title_left_fbr {
+                        width: 100%;
+                        height: 30px;
+                        font-weight: bold;
+                        color: #676767;
+                        font-size: 14px;
+                        text-align: right;
+                    }
+                    
+                    .text_left_fbb {
+                        color: #676767;
+                        font-size: 12px;
+                        box-sizing: border-box;
+                        line-height: 18px;
+                    }
+                    
+                    
+                    .text_left_fbr {
+                        color: #676767;
+                        font-size: 12px;
+                        box-sizing: border-box;
+                        text-align: right;
+                    }
+                                        
