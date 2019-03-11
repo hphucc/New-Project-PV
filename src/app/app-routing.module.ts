@@ -3,16 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { LoginComponent } from './login/login/login.component';
 import { NotFoundComponent } from './login/not-found/not-found.component';
+import { UserComponent } from "./components/user/user.component";
+import { AdminComponent } from './admin/admin.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/login',
+    redirectTo: '/admin',
     pathMatch: 'full'
-    // component: LoginComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: UserComponent
   },
   {
     path: '**',
