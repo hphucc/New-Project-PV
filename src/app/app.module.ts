@@ -14,12 +14,14 @@ import { HttpClientModule } from "@angular/common/http";
 import { BodyComponent } from "./giaodien/body/body.component";
 import { FootComponent } from "./giaodien/foot/foot.component";
 import { HeaderComponent } from "./giaodien/header/header.component";
+import { HomeComponent } from "./home/home.component";
 //service
 import { AuthTokenService } from "./services/auth-token.service";
 import { AuthGuard } from "./auth/auth-login.gaurd";
 import { AddproductComponent } from './products-admin/product-add/addproduct/addproduct.component';
 import { EditproductComponent } from './products-admin/product-edit/editproduct/editproduct.component';
 import { DeleteproductComponent } from './products-admin/product-delete/deleteproduct/deleteproduct.component';
+
 
 //
 @NgModule({
@@ -36,7 +38,8 @@ import { DeleteproductComponent } from './products-admin/product-delete/deletepr
     DeleteproductComponent,
     BodyComponent,
     FootComponent,
-    HeaderComponent
+    HeaderComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
