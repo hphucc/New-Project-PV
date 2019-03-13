@@ -12,6 +12,9 @@ export class UserComponent implements OnInit {
   public tokenParam: TokenParams;
   public isLogged = false;
 
+  public txt_email:string;
+  public password:string;
+
   constructor(
     private router: Router,
     private authService: AuthTokenService
