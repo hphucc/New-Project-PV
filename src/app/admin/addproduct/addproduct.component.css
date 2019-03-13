@@ -1,0 +1,6 @@
+.form-control:focus{
+    background-color:gray;
+    font-family: Times New Roman;
+    color: black;
+    border-radius: 10px;
+}

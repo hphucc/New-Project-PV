@@ -1,0 +1,74 @@
+
+<div class="row" style="width: 800px; margin: 0 auto;">
+    <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
+    <div >
+      <form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
+        <!--[(ngModel)]="product.id"  -->
+        <!-- <div class="form-group">
+          <h4>ID:</h4>
+          <input class="form-control" [(ngModel)]="product.id" name="txtid" #id="ngModel">
+        </div> -->
+        <div class="form-group">
+          <h4>Title:</h4>
+          <input class="form-control" name="txttitle" [(ngModel)]="product.title" #title="ngModel" required>
+          <div class="alert alert-danger" *ngIf="(frm.submitted && title.pristine) || (title.error?.required && title.touched)">
+            <strong>Title is required</strong>
+          </div>
+        </div>
+        <div class="form-group">
+          <h4>Images:</h4>
+          <input class="form-control" name="txtimage" type="file" [(ngModel)]="product.images" #images="ngModel">
+          <div class="alert alert-danger" *ngIf="(frm.submitted && images.pristine) || (images.error?.required && images.touched)">
+            <strong>Images is required</strong>
+          </div>
+        </div>
+        <div class="form-group">
+          <h4>Price:</h4>
+          <input class="form-control"name="txtprice" [(ngModel)]="product.price" #price="ngModel">
+          <div class="alert alert-danger" *ngIf="(frm.submitted && price.pristine) || (price.error?.required && price.touched)">
+            <strong>Price is required</strong>
+          </div>
+        </div>
+        <div class="form-group">
+          <h4>Quantity:</h4>
+          <input class="form-control"name="txtquantity" [(ngModel)]="product.quantity" #quantity="ngModel">
+          <div class="alert alert-danger" *ngIf="(frm.submitted && quantity.pristine) || (quantity.error?.required && quantity.touched)">
+            <strong>Quantity is required</strong>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <h4>Category:</h4>
+          <select id="input" class="form-control" required="required" name="txtcategory" [(ngModel)]="product.category" #category="ngModel">
+            <option value="Screen">Screen</option>
+            <option value="Monitor">Monitor</option>
+            <option value="Mouse">Mouse</option>
+            <option value="Hard Disk">Hard Disk</option>
+            <option value="Mainboard">Mainboard</option>
+            <option value="Laptop">Laptop</option>
+          </select>
+          <div class="alert alert-danger" *ngIf="(frm.submitted && category.pristine) || (category.error?.required && category.touched)">
+            <strong>Category is required</strong>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <h4>Status:</h4>
+        <select id="input" class="form-control" name="txtstatus" [(ngModel)]="product.status" #status="ngModel">
+          <option value="Empty">Screen</option>
+          <option value="Pending">Monitor</option>
+          <option value="Sales">Mouse</option>
+          <option value="Selling">Hard Disk</option>
+        </select>
+        <div class="alert alert-danger" *ngIf="(frm.submitted && status.pristine) || (status.error?.required && status.touched)">
+          <strong>Status is required</strong>
+        </div>
+      </div>
+
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;" >Thêm</button>
+      </form>
+    </div>
+  </div>
