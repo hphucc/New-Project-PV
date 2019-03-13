@@ -21,6 +21,7 @@ import { AuthGuard } from "./auth/auth-login.gaurd";
 import { AddproductComponent } from './products-admin/product-add/addproduct/addproduct.component';
 import { EditproductComponent } from './products-admin/product-edit/editproduct/editproduct.component';
 import { DeleteproductComponent } from './products-admin/product-delete/deleteproduct/deleteproduct.component';
+import { ListproductComponent } from "./admin/listproduct/listproduct.component";
 
 
 //
@@ -39,7 +40,8 @@ import { DeleteproductComponent } from './products-admin/product-delete/deletepr
     BodyComponent,
     FootComponent,
     HeaderComponent,
-    HomeComponent
+    HomeComponent,
+    ListproductComponent
   ],
   imports: [
     BrowserModule,

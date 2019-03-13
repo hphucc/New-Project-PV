@@ -21,6 +21,7 @@ export class ListproductComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
       this._product = data;
+      console.log(data);
     });
   }
 
