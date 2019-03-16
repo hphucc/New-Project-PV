@@ -22,6 +22,7 @@ import { AddproductComponent } from './products-admin/product-add/addproduct/add
 import { EditproductComponent } from './products-admin/product-edit/editproduct/editproduct.component';
 import { DeleteproductComponent } from './products-admin/product-delete/deleteproduct/deleteproduct.component';
 import { ListproductComponent } from "./admin/listproduct/listproduct.component";
+import { DetailProductComponent } from './giaodien/detail-product/detail-product.component';
 
 
 //
@@ -41,7 +42,8 @@ import { ListproductComponent } from "./admin/listproduct/listproduct.component"
     FootComponent,
     HeaderComponent,
     HomeComponent,
-    ListproductComponent
+    ListproductComponent,
+    DetailProductComponent
   ],
   imports: [
     BrowserModule,

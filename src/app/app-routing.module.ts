@@ -12,6 +12,7 @@ import { ListproductComponent } from "./admin/listproduct/listproduct.component"
 import { EditproductComponent } from "./admin/editproduct/editproduct.component";
 import { DeleteproductComponent } from "./admin/deleteproduct/deleteproduct.component";
 import { FormsModule } from '@angular/forms';
+import { DetailProductComponent } from './giaodien/detail-product/detail-product.component';
 ;
 
 const routes: Routes = [
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: UserComponent
+  },
+  {
+    path: 'detail/:id',
+    component: DetailProductComponent
   },
   {
     path: '**',

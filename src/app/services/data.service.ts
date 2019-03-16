@@ -7,6 +7,10 @@ import { Product } from "./../modules/getToken/product.class";
 
 const url = `${environment.apiPV}/api/v1/products/list`
 const urls = `${environment.apiPV}/api/v1/products/create`
+const urlEdit = `${environment.apiPV}/api/v1/products/update`
+const urlDetail = `${environment.apiPV}/api/v1/products/details`
+const urlActive = `${environment.apiPV}/api/v1/products/active`
+const urlDeActive = `${environment.apiPV}/api/v1/products/deactive`
 @Injectable({
   providedIn: 'root'
 })

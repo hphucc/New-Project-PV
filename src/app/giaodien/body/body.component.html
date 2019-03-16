@@ -481,41 +481,41 @@
 				<img src="./../../../assets/img/banner/tivi.png">
 			</div> <!-- LEFT TIVI -->
 
-			<div class="right_tivi js-carousel">
-				<div class="khung_product js-carousel__frame">
-					<div class="list_product js-carousel__slides" >
+			<div class="right_tivi">
+				<div class="khung_product">
+					<div class="list_product" >
 						<div class="product_right_tivi" *ngFor="let item of _product.docs">
-					<div class="img_right_tivi">
-						<img src="{{item.images}}">
-					</div> <!-- IMG RIGHT TIVI -->
+							<div class="img_right_tivi">
+								<img src="{{item.images}}">
+							</div> <!-- IMG RIGHT TIVI -->
 
-					<div class="detail">
-						Smart Tivi QLED Samsung 4K 75 inch 75Q9FNA (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)
-					</div> <!-- DETAIL -->
+							<div class="detail" [routerLink]="['/detail', item.id]">
+								Smart Tivi QLED Samsung 4K 75 inch 75Q9FNA (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)
+							</div> <!-- DETAIL -->
 
-					<div class="price-off">139.990.000 
-						<span style="font-size: 11px; font-style:italic; font-weight: lighter;">(Giá bán lẻ)</span>
-					</div> <!-- PRICE OFF -->
+							<div class="price-off">139.990.000 
+								<span style="font-size: 11px; font-style:italic; font-weight: lighter;">(Giá bán lẻ)</span>
+							</div> <!-- PRICE OFF -->
 
-					<div class="price-on">139.990.000 
-						<span style="font-size: 11px; font-style:italic; font-weight: lighter; color: #333;">(Giá tốt online)</span>
-					</div> <!-- PRICE ON -->
+							<div class="price-on">139.990.000 
+								<span style="font-size: 11px; font-style:italic; font-weight: lighter; color: #333;">(Giá tốt online)</span>
+							</div> <!-- PRICE ON -->
 
-					<div class="rating">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="far fa-star" style="color: #8bb6ff;"></i>
-					</div> <!-- RATING -->
+							<div class="rating">
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="fas fa-star"></i>
+								<i class="far fa-star" style="color: #8bb6ff;"></i>
+							</div> <!-- RATING -->
 
-					<div class="gift">
-						<img src="https://phongvu.vn/images/icon_Gift.svg">
-					</div> <!-- GIFT -->
+							<div class="gift">
+								<img src="https://phongvu.vn/images/icon_Gift.svg">
+							</div> <!-- GIFT -->
 
-					<div class="qlt">
-						<p>Còn lại: 3</p>
-					</div>
+							<div class="qlt">
+								<p>Còn lại: 3</p>
+							</div>
 						</div> <!-- PRODUCT RIGHT TIVI -->
 
 					
