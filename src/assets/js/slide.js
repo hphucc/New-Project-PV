@@ -10,6 +10,6 @@
           classNameFrame: 'js-carousel__frame',
           classNameSlideContainer: 'js-carousel__slides',
           classNamePrevCtrl: 'js-carousel__prev',
-          classNameNextCtrl: 'js-carousel__next',      
+          classNameNextCtrl: 'js-carousel__next',
           });
     }

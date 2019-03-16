@@ -35,6 +35,14 @@ const routes: Routes = [
       {
         path: 'addproduct',
         component: AddproductComponent
+      },
+      {
+        path: 'editproduct/:id',
+        component: EditproductComponent
+      },
+      {
+        path: 'deactive',
+        component: DeleteproductComponent
       }
     ]
   },
@@ -54,7 +62,8 @@ const routes: Routes = [
     LoginComponent,
     NotFoundComponent,
     AddproductComponent, 
-   
+    EditproductComponent,
+    DeleteproductComponent
   ],
   imports: [
     BrowserModule ,

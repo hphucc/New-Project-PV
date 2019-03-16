@@ -475,64 +475,41 @@
   
       <div class="clear"></div>
   </div> <!---------------------- PINK -->
-
-  <div class="tivi ">
-			<div class="left_tivi">
+<!-- ============================TV============================== -->
+<div class="rowTwo">
+		<div class="rowTwo-left">
 				<img src="./../../../assets/img/banner/tivi.png">
-			</div> <!-- LEFT TIVI -->
-
-			<div class="right_tivi js-carousel">
-				<div class="khung_product js-carousel__frame">
-					<div class="list_product js-carousel__slides" >
-						<div class="product_right_tivi" *ngFor="let item of _product.docs">
-					<div class="img_right_tivi">
-						<img src="{{item.images}}">
-					</div> <!-- IMG RIGHT TIVI -->
-
-					<div class="detail">
-						Smart Tivi QLED Samsung 4K 75 inch 75Q9FNA (Tặng khung treo, miễn phí lắp đặt, giao hàng tận nơi)
-					</div> <!-- DETAIL -->
-
-					<div class="price-off">139.990.000 
-						<span style="font-size: 11px; font-style:italic; font-weight: lighter;">(Giá bán lẻ)</span>
-					</div> <!-- PRICE OFF -->
-
-					<div class="price-on">139.990.000 
-						<span style="font-size: 11px; font-style:italic; font-weight: lighter; color: #333;">(Giá tốt online)</span>
-					</div> <!-- PRICE ON -->
-
-					<div class="rating">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="far fa-star" style="color: #8bb6ff;"></i>
-					</div> <!-- RATING -->
-
-					<div class="gift">
-						<img src="https://phongvu.vn/images/icon_Gift.svg">
-					</div> <!-- GIFT -->
-
-					<div class="qlt">
-						<p>Còn lại: 3</p>
+			<!-- <p>Xem tất cả</p> -->
+		</div>
+		<div class="col-md-7 rowTwo-right">
+			<div class="row responsive rowTwoProduct-responsive"> 
+				<div class="rowProduct-box" *ngFor="let item of _product">
+					<div class="img-rowtow">
+						<img [src]="item.images"  alt="Image">
 					</div>
-						</div> <!-- PRODUCT RIGHT TIVI -->
-
-					
-					
-					</div> <!-- LIST PRODUCT -------------------------->
-				</div> <!-- KHUNG PRODUCT -->
-				<div class="btn_prev js-carousel__prev">
-						<i class="fas fa-chevron-left"></i>
+					<p class="nameProduct">{{item.title}}</p>
+					<p class="price">{{item.price}}</p>
+					<p class="priceOnline">{{item.quantity}}</p>
+					<p class="start">
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star"></i>
+						<i class="fas fa-star-half-alt"></i>
+					</p>
+					<p class="gifts">
+						<i class="fas fa-gifts"></i>
+					</p>
+					<div class="meter">
+						<!-- <i class="fas fa-carrot"></i> -->
+						<span>Số lượng: {{item.discount ? item.discount : 'Tạm Hết Hàng'}}</span>
+					</div>
 				</div>
-				<div class="btn_next js-carousel__next">
-						<i class="fas fa-chevron-right"></i>
-				</div>
+			</div>
+		</div>
+	</div>
+<!-- ============================TV============================== -->
 
-			</div> <!-- RIGHT TIVI ----------------------------------->
-
-			<div class="clear"></div>
-  </div> <!-- TIVI -->
   
   <div class="tivi2">
 			<div class="tivi2_title">

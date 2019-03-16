@@ -13,7 +13,9 @@ import Swal from 'sweetalert2';
 export class AddproductComponent implements OnInit, OnDestroy {
   public subcription: Subscription;
   public product: Product = {};
-  constructor(private router: Router,
+  public image: any;
+  constructor(
+      private router: Router,
       public productservice: DataService
     ) { }
 
@@ -46,5 +48,16 @@ export class AddproductComponent implements OnInit, OnDestroy {
     if(this.subcription)
       this.subcription.unsubscribe();
   }
-
+  
+  handleFileInput(event) {
+    const oFReader = new FileReader();
+    const image = event.target.files[0];
+    oFReader.readAsDataURL(image);
+    oFReader.onload = (oFREvent) => {
+      this.product['images'] = oFREvent.target['restult'];
+    };
+    this.image = image;
+    console.log(this.image);
+  }
+  
 }

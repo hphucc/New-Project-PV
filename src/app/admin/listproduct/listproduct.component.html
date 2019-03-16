@@ -39,15 +39,16 @@
             <tr class="table-admin" *ngFor="let item of _product.docs">
                 <td>{{item.id}}</td>
                 <td>{{item.title}}</td>
-                <td><img [src]="item.images" style="width:100px; height: 100px;"></td>
+                <td><img src="{{item.images}}" style="width:100px; height: 100px;"></td>
                 <td>{{item.price}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.is_active}}</td>
                 <td>{{item.category}}</td>
                 <td>{{item.status}}</td>
                 <td>{{item.discount}}</td>
-                <td><button type="button" class="btn btn-success">Edit</button> 
-                  <button type="button" class="btn btn-primary">Disable</button>
+                <td><button type="button" style="margin-bottom: 3px;" class="btn btn-success" [routerLink]="['/admin/editproduct', item.id]">Edit</button> <br>
+                  <button type="button" style="margin-bottom: 3px;" class="btn btn-primary" (click)="onActive()">Active</button> <br>
+                  <button type="button" class="btn btn-danger" (click)="onDeActive()" >DeActive</button>
                 </td>
             </tr>
             <tr>

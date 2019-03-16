@@ -154,7 +154,129 @@
     border-top: 2px solid #d42333;
 }
 
+            /*------------------------------------mid content 2--------------------------------------*/
 
+            .rowTwo{
+                margin-top: 1em;
+                background:white;
+                display:flex;
+                /* margin-left: -20px; */
+            }
+            .rowTwo-left{
+                flex:1;
+            }
+            .rowTwo-left > img {
+                height: 470px;
+                width: 240px;
+            }
+            .rowTwo-right{
+                flex:4;
+            }
+            .rowTwo-left p{
+                position:absolute;
+                bottom:0em;
+                right:3em;
+                letter-spacing:1.2px;
+                text-transform: uppercase;
+                color:white;
+                cursor: pointer;
+                display: block;
+                font-size: 1.2em;
+            }
+            .rowTwo .rowTwo-left{
+                background-size: 80% 80%;
+                max-width:80%;
+                min-height:240px;
+            }
+            .rowTwo-right .rowProduct-box{
+                padding:0 0.2%;   
+            }
+             .rowTwo-right{
+                margin-left:-20px;
+            } 
+            .rowTwo-right .slick-prev,
+            .rowTwo-right .slick-next{
+                z-index: 1;
+                display:none !important;
+                -webkit-transition: all 1s;
+                   -moz-transition: all 1s;
+                    -ms-transition: all 1s;
+                     -o-transition: all 1s;
+                        transition: all 1s;
+            }
+            .rowTwo-right:hover .slick-prev,
+            .rowTwo-right:hover .slick-next{
+                display: block !important;
+            }
+            
+            .img-rowtow{
+                width: 255px;
+                height: 280px;
+            }
+            .img-rowtow > img{
+                width:100%;
+                
+             }
+
+
+                
+                .rowProduct-box .nameProduct{
+                    color: #333;
+                    margin-top: 10px;
+                    word-break: break-word;
+                    font-family: Roboto,sans-serif;
+                    font-size:14px;
+                }
+                .rowProduct-box .price, 
+                .rowProduct-box .priceOnline{
+                    font-weight:600;
+                    color: #333;
+                    font-size:14px;
+                    line-height: 0.8em;
+                }
+                .rowProduct-box .priceOnline{
+                    font-size:12px;
+                    color:rgb(187, 30, 30);
+                }
+                .rowTowProduct-box .price::after,
+                .rowProduct-box .price::after{
+                    content: '(Giá bán lẻ)';
+                    font-weight:500;
+                    font-size:10px;
+                    font-style:italic;
+                }
+            
+                .rowProduct-box .priceOnline::after{
+                    content: '(Giá tốt Online)';
+                    font-size: 10px;
+                    font-style:italic;
+                    color: #333;
+                }
+                .rowProduct-box .start i{
+                    color:#ffc120;
+                }
+                .rowProduct-box .gifts{
+                    color:rgb(141, 34, 34);
+                }
+                .rowProduct-box .meter{
+                    background-image: linear-gradient(90deg,#ef3f43 0,#f6290c 0,#fa515d 0,#ff3400 0,#ed684d);
+                    border-radius:20px;
+                   
+                    padding:1px;
+                }
+                .rowProduct-box .meter i{
+                    border: 1px solid white;
+                    padding: 2px;
+                    border-radius:50%;
+                    background:white;
+                    color:red;
+                }
+                .rowProduct-box .meter span{
+                    text-transform: uppercase;
+                    margin-left:0.5em;
+                    color:white; 
+                }
+            
 
 
         /*------------------------------- RIGHT CONTENT -------------------------*/

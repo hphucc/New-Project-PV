@@ -13,6 +13,7 @@ import { Product } from "./../../modules/getToken/product.class";
 export class ListproductComponent implements OnInit, OnDestroy {
   public subcription: Subscription;
   public _product: Product = {};
+
   constructor(private router: Router,
       public productservice: DataService
     ) { }
@@ -21,7 +22,6 @@ export class ListproductComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
       this._product = data;
-      console.log(data);
     });
   }
 
@@ -36,5 +36,9 @@ export class ListproductComponent implements OnInit, OnDestroy {
       localStorage.removeItem('userToken');
       this.router.navigate(['login']);
     }  
-  }
+ }
+ onDeActive(){
+   
+ }
+
 }
