@@ -1,13 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { DataService } from "./../../services/data.service";
+import { DataService } from "./../../../services/data.service";
 import { Subscription } from "rxjs";
-import { Product } from "./../../modules/getToken/product.class";
+import { Product } from "./../../../modules/getToken/product.class";
 import { HttpClient } from "@angular/common/http";
-import Swal from 'sweetalert2';
-import { environment } from "./../../../environments/environment";
-
-const urls = `${environment.apiPV}/api/v1/products/create`
 
 @Component({
   selector: 'app-editproduct',

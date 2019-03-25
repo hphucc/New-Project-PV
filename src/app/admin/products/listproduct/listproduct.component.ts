@@ -1,9 +1,9 @@
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from "./../../services/data.service";
+import { DataService } from "./../../../services/data.service";
 import { Subscription } from "rxjs";
-import { Product } from "./../../modules/getToken/product.class";
+import { Product } from "./../../../modules/getToken/product.class";
 
 @Component({
   selector: 'app-listproduct',
@@ -21,7 +21,7 @@ export class ListproductComponent implements OnInit, OnDestroy {
   
   ngOnInit() {
     this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
-      this._product = data;
+      this._product = data['docs'];
     });
   }
 
@@ -37,8 +37,21 @@ export class ListproductComponent implements OnInit, OnDestroy {
       this.router.navigate(['login']);
     }  
  }
- onDeActive(){
-   
+ //deactive
+ loadproduct(){
+  this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
+    this._product = data;
+  });
  }
+ 
+ onDeActive(id: string){
+  this.productservice.getProductByID(id).subscribe(data =>{
+    this._product = data;
+    this.productservice.DeactiveProduct(this._product).subscribe(data =>{
+      this.loadproduct();
+      this.router.navigate(['/admin/deactive/:id']);
+    })
+  })
+}
 
 }

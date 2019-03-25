@@ -1,0 +1,43 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Dashboard
+    <small>Version 2.0</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#"><i class="fa fa-dashboard" (click)="onLogout()"></i> Logout</a></li>
+    <li class="active">Dashboard</li>
+  </ol>
+</section>
+
+<div class="row" style="width: 800px; margin: 0 auto;">
+  <h1 style="text-align: center;">Category Information</h1>
+  <div>
+    <form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
+      <!--  -->
+      <div class="form-group">
+          <h4>Name Category:</h4>
+          <input class="form-control" name="txtname" [(ngModel)]="category.name" #name="ngModel" required>
+          <div class="alert alert-danger" *ngIf="(frm.submitted && name.pristine) || (name.error?.required && name.touched)">
+            <strong>Name category is required</strong>
+          </div>
+        </div>
+
+      <div class="form-group">
+        <h4>Sub_Category:</h4>
+        <tag-input name="txtsub_category" [(ngModel)]="category.sub_category" #subcategory="ngModel" [identifyBy]="'name'" [displayBy]="'name'"
+          >
+        </tag-input>
+        <!-- <div class="alert alert-danger" *ngIf="(frm.submitted && sub_category.pristine) || (sub_category.error?.required && sub_category.touched)">
+            <strong>Sub_category is required</strong>
+          </div> -->
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;">Add</button>
+    </form>
+  </div>
+</div>

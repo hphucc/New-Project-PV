@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
-import { DataService } from "./../../services/data.service";
+import { DataService } from "./../../../services/data.service";
 import { Subscription } from "rxjs";
-import { Product } from "./../../modules/getToken/product.class";
+import { Product } from "./../../../modules/getToken/product.class";
 import Swal from 'sweetalert2';
 
 @Component({
@@ -11,17 +11,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit, OnDestroy {
+ 
   public subcription: Subscription;
   public product: Product = {};
   public image: any;
+
   constructor(
       private router: Router,
       public productservice: DataService
     ) { }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
   onAdd(){
     this.subcription = this.productservice.addAllproduct(this.product).subscribe(data =>{

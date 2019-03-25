@@ -1,4 +1,5 @@
-<!-- <app-appheader></app-appheader> -->
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
 
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -15,25 +16,21 @@
 
 
 <div class="row" style="width: 800px; margin: 0 auto;">
-    <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
+    <h1 style="text-align: center;">Product Information</h1>
     <div >
       <form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
-        <!--[(ngModel)]="product.id"  -->
-        <!-- <div class="form-group">
-          <h4>ID:</h4>
-          <input class="form-control" [(ngModel)]="product.id" name="txtid" #id="ngModel">
-        </div> -->
         <div class="form-group">
           <h4>Title:</h4>
           <input class="form-control" name="txttitle" [(ngModel)]="product.title" #title="ngModel" required>
           <div class="alert alert-danger" *ngIf="(frm.submitted && title.pristine) || (title.error?.required && title.touched)">
             <strong>Title is required</strong>
           </div>
+          <!--  -->
         </div>
         <div class="form-group">
           <h4>Images:</h4>
-          <img [src]="product?.images" [(ngModel)]="product.images" #images="ngModel" [ngModelOptions]="{standalone: true}">
-          <input type="file" class="form-control" (change)=handleFileInput($event) required>
+          <img [src]="product.images" [(ngModel)]="product.images" #image="ngModel" name="images" ngDefaultControl>
+          <input type="file" class="form-control" [src]="product.images"  (onchange)=handleFileInput($event) required >
         </div>
         <div class="form-group">
           <h4>Price:</h4>
@@ -65,8 +62,6 @@
             <strong>Category is required</strong>
           </div>
         </div>
-
-
 
         <div class="form-group">
           <h4>Status:</h4>

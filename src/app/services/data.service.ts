@@ -10,7 +10,9 @@ const urls = `${environment.apiPV}/api/v1/products/create`
 const urlEdit = `${environment.apiPV}/api/v1/products/update`
 const urlDetail = `${environment.apiPV}/api/v1/products/details`
 const urlActive = `${environment.apiPV}/api/v1/products/active`
-const urlDeActive = `${environment.apiPV}/api/v1/products/deactive`
+const urlDeactive = `${environment.apiPV}/api/v1/products/deactive`
+const urlDeActiveList = `${environment.apiPV}/api/v1/products/list?is_active=0`
+const urlImage =`${environment.apiPV}/api/v1/upload/image`
 
 @Injectable({
   providedIn: 'root'
@@ -50,7 +52,19 @@ export class DataService {
     return this.http.get<Product>(`${urlDetail}/${id}`, { headers: this.headers });
   }
 //Vo hieu hoa san pham
-  DeactiveProduct(id: string): Observable<Product>{
-    return this.http.put<Product>(`${urlDetail}/${id}`, { headers: this.headers });
+  DeactiveProduct(product: Product): Observable<Product>{
+    return this.http.put<Product>(`${urlDeactive}/${product['_id']}`, product, { headers: this.headers });
   }
+//Danh sach san pham bi Deactive
+  getDeactive(product: Product): Observable<Product>{
+    return this.http.get<Product>(urlDeActiveList);
+  }
+//Active sản phẩm bị vô hiệu hóa
+  OnActiveProduct(product: Product): Observable<Product>{
+    return this.http.put<Product>(`${urlActive}/${product['_id']}`, product, { headers: this.headers });
+  }
+//upload image 
+  // postImages(product: Product): Observable<Product>{
+  //   return this.http.post<Product>(urlImage, product, {headers: this.headers});
+  // }
 }
