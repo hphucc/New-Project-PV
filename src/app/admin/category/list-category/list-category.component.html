@@ -1,0 +1,69 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<div class="content-wrapper" id="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-dashboard" (click) = "onLogout()"></i> Logout</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+  <hr>
+  <div class="container">
+    <div class="container-header" style="height: 50px; ">
+        <h1>List Category</h1>
+    </div>
+    <div class="container-footer" style="height: 50px;">
+        <table class = "table table-hover">
+          <thead>
+            <tr class="table-admin">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Sub_Category</th>
+                <th></th>
+                <th>Is_Active</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!--  -->
+            <tr class="table-admin" *ngFor="let item of _category | paginate : {itemsPerPage:10, currentPage: p}" >
+                <td>{{item._id}}</td>
+                <td>{{item.name}}</td>
+                <td >
+                  <p *ngFor="let items of item.sub_category">
+                    {{items.name}}
+                  </p>
+                </td>
+                <td>
+                  <button class="btn btn-success" [routerLink]="['/admin/addsubcate', item._id]">Add-Sub</button>
+                </td>
+                <td>{{item.is_active}}</td>
+                <td>
+                  <button type="button" style="margin-bottom: 3px;" class="btn btn-success" [routerLink]="['/admin/editproduct', item.id]">Edit</button>
+                  <br>
+                  <button type="button" class="btn btn-danger" (click)="onDeActive(item.id)">DeActive</button>
+                </td>
+            </tr>
+            <tr>
+              <th></th>
+            </tr>
+        </tbody>
+        </table>
+        <div class="row">
+          <pagination-controls 
+              (pageChange)="p = $event"  
+              maxSize="7"
+              previousLabel="Previous"
+              nextLabel="Next">
+          </pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.content-wrapper -->

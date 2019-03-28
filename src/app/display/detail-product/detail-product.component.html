@@ -1,0 +1,266 @@
+<app-header></app-header>
+
+<div class="wrapper_detail">
+    <div class="top_detail"  *ngIf="products">
+        <div class="left_top_detail">
+            <div class="img_big_td">
+                <img src="{{products.images[0]}}" alt="IMG BIG TOP DETAIL">
+            </div> <!-- IMG BIG TOP DETAIL -->
+
+            <div class="img_small_td">
+                <div class="thb_td">
+                    <div class="img_thb_td">
+                        <img [src]="products.images[0   ]" alt="IMG BIG TOP DETAIL">
+                    </div> <!-- IMG THUMBNAIL TD-->
+                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
+
+                <div class="thb_td">
+                    <div class="img_thb_td">
+                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
+                    </div> <!-- IMG THUMBNAIL TD-->
+                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
+
+                <div class="thb_td">
+                    <div class="img_thb_td">
+                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
+                    </div> <!-- IMG THUMBNAIL TD-->
+                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
+
+                <div class="thb_td">
+                    <div class="img_thb_td">
+                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
+                    </div> <!-- IMG THUMBNAIL TD-->
+                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
+
+
+                <div class="clear"></div>
+
+            </div> <!-- IMG SMALL TOP DETAIL -->
+
+            <div class="des">
+                <div class="title_des">
+                    Mô tả
+                </div> <!-- TITLE DES -->
+    
+                <div class="name_product_des">
+                    Tên sản phẩm: Android Tivi Sony 49 inch KDL-49W800F
+                </div> <!-- NAME PRODUCT DES -->
+
+                <p>- Kích thước: 49"</p>
+                <p>- Độ phân giải: 1920 x 1080 ( Full HD )</p>
+                <p>- Hệ điều hành: Android</p>
+                <p>- Kết nối mạng: LAN; WiFi</p>
+                <p>- Cổng xuất hình: 4 x HDMI</p>
+
+                <div class="doc_them">
+                    Đọc Thêm <i class="fas fa-chevron-down"></i>
+                </div> <!-- ĐỌC THÊM -->
+            </div> <!-- DES -->
+        </div> <!-- LEFT TOP DETAIL ------------>
+
+        <div class="right_top_detail">
+            <div class="title_rtd">
+                {{products.title}}
+            </div> <!-- TITLE RTD -->
+
+            <div class="sku">SKU: {{products.sku}}</div> <!-- SKU -->
+
+            <div class="star">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+
+                <div style="float: left; padding-left: 7px;"><b>4.8</b>/5</div>
+                <div class="xdg">Xem đánh giá </div> <!-- XEM ĐÁNH GIÁ -->
+
+                <div class="clear"></div>
+            </div> <!-- STAR ICON -------->
+
+            <div class="flash">
+                <div class="flash_top">
+                    <div class="left_flash_top">
+                        <div class="icon_flash">
+                            <i class="fa fa-bolt" aria-hidden="true"></i>
+                        </div> <!-- ICON FLASH -->
+
+                        <div class="text_flash_sale">
+                            Flash Sale
+                        </div>
+                    </div> <!-- LEFT FLASH TOP ----------->
+
+                    <div class="mid_flash_top">
+                        <div class="qlt_fl"><p>Còn lại: {{products.quantity}}</p></div> <!-- QLT FL -->
+                    </div> <!-- MID FLASH TOP -------->
+
+                    <div class="right_flash_top">
+                        <div class="title_right_flash">
+                            Thời gian còn lại
+                        </div> <!-- TITLE RIGHT FLASH -->
+
+                        <div class="time_re">
+                                <div class="time_re_gpg">03</div>
+                                <div class="time_re_gpg">58</div>
+                                <div class="time_re_gpg">13</div>
+                                <div class="clear"></div>
+                        </div> <!-- TIMME RE -------------------------------->
+                        
+                    </div> <!-- RIGHT FLASH TOP --------------->
+
+                    <div class="clear"></div>
+                </div> <!-- FLASH TOP ------------------------------->
+
+                <div class="mid_flash">
+                    <div class="price_ship">
+                        <div class="price">
+                            <div class="gbl_price">
+                                <div class="text_price">Giá bán lẻ</div> <!-- TEXT PRICE -->
+                                <div class="num_price">16.390.000đ</div> <!-- NUM PRICE -->
+
+                                <div class="clear"></div>
+                            </div> <!-- GIÁ BÁN LẺ ---->  
+                            
+                            <div class="gfs">
+                                <div class="text_gfs">Giá flash sale</div> <!-- TEXT GFS -->
+                                <div class="num_fls">{{products.price}}đ</div> <!-- NUM GFS -->
+                                <div class="clear"></div>
+                            </div> <!-- GIÁ FLASH SALE -->
+
+                            <div class="gonl">
+                                <div class="text_gonl">Giá tốt Online</div> <!-- TEXT ONL -->
+                                <div class="num_gonl">13.290.000đ</div> <!-- NUM ONL -->
+                                <span class="chu_thich_gfs">(Giá sau khi áp dụng đầy đủ cộng dồn khuyến mãi bên dưới)</span>
+                                <div class="clear"></div>
+                            </div> <!-- GIÁ ONLINE -->
+
+                            <div class="bor_bot"></div> <!-- BORDER BOT -->
+
+                            <div class="km">
+                                <div class="title_km">Khuyến mãi</div>
+
+                                <div class="wrapper_discount">
+                                    <div class="discount">
+                                        <i class="fas fa-caret-left"></i>
+                                        {{products.discount}}%
+                                    </div> <!-- DISCOUNT -->          
+
+                                    <div class="clear"></div>
+                                </div> <!-- WRAPPER DISCOUNT ---------->
+                                <div class="text_discount">
+                                    Giảm thêm <b>10% tối đa 200K</b> khi nhập mã <b>VNPAY10</b> hoặc <b>5% tối đa 500K</b> khi nhập mã <b>VNPAYQR5</b> 
+                                    <a href="" style="text-decoration: none;color: #3994fb;">&nbsp;Xem chi tiết tại đây</a>
+                                </div> <!-- TEXT DISCOUNT -->
+
+                                <div class="clear"></div>
+                            </div> <!-- KHUYẾN MÃI -->
+
+                            <div class="ttsp">
+                                <div class="text_ttsp">Tình trạng sản phẩm</div>
+                                <div class="num_ttsp">{{products.is_active ? 'Còn hàng' : 'Hết hàng'}}</div>
+
+                                <div class="clear"></div>
+                            </div> <!-- TÌNH TRẠNG SẢN PHẨM -->
+                        </div> <!-- PRICE ------------------>
+
+                        <div class="ship">
+                            <div class="left_ship">Vận chuyển</div> <!-- LEFT SHIP -->
+
+                            <div class="right_ship">Miễn phí vận chuyển(với đơn hàng trên 500.000đ)</div>
+
+                            <div class="clear"></div>
+                        </div> <!-- SHIP ----->
+
+                        <div class="bor_bot"></div>
+
+                        <div class="select_qlt">
+                            <div class="left_qlt">Chọn số lượng</div> <!-- LEFT QLT -->
+                            <div class="right_qlt">
+                                <div class="minus_qlt">-</div>
+                                <div class="text_select_qlt">1</div>
+                                <div class="plus_qlt">+</div>
+
+                                <div class="clear"></div>
+                            </div> <!-- RIGHT QLT -->
+
+                            <div class="clear"></div>
+                        </div> <!-- SELECT QLT ------>
+                    </div> <!-- PRICE_SHIP ---------------------->
+
+                    <div class="button_fl_bot">
+                        <div class="buy">Mua ngay</div> <!-- BUY -->
+                        <div class="add_to_card">Thêm vào giỏ hàng</div>
+
+                        <div class="clear"></div>
+                    </div> <!-- BUTTON FLASH BOT -->
+
+                    <div class="foot_fl_bot">
+                        <div class="title_foot_fl_bot">
+                            <div class="kmhd">
+                                Khuyến mãi hướng dẫn
+                            </div> <!-- KHUYẾN MÃI HẤP DẪN -->
+
+                            <div class="th">
+                                Thương hiệu
+                            </div><!-- THƯƠNG HIỆU -->
+
+                            <div class="dgvbl">
+                                Đánh giá và bình luận
+                            </div> <!-- ĐÁNH GIÁ VÀ BÌNH LUẬN -->
+
+                            <div class="clear"></div>
+                        </div> <!-- TITLE FOOT FLASH BOT ------>
+
+                        <div class="text_foot_fl_bot">
+                            <p><b>Quà tặng kèm khi mua sản phẩm:</b></p>
+                            <li>Kệ LCD nghiêng HT 40 - 65 INCH HT30N</li>
+                        </div>
+                    </div> <!-- FOOT FLASH BOT ------------------>
+                    
+                </div> <!-- MID FLASH --------------------------------->
+            </div> <!-- FLASH ---------------------------------------------->
+
+            <div class="clear"></div>
+
+        </div> <!-- RIGHT TOP DETAIL ------------------>
+
+        <div class="clear"></div>
+    </div> <!-- TOP DETAIL ---------------------->
+
+
+    <div class="bot_detail">
+
+        <div class="product_right_tivi_wrapper responsivehmv rowTwoProduct-responsive">
+            <div class="product_right_tivi"  *ngFor="let item of _product" [routerLink]="['detail/', item.id]"> 
+                <div class="img_right_tivi">
+                    <img [src]="item.images[0]" alt="">
+                </div> <!-- IMG RIGHT TIVI -->
+        
+                <div class="detail">
+                    {{item.title}}
+                </div> <!-- DETAIL -->
+        
+                <div class="price-off">
+                    {{item.price}}
+                </div> <!-- PRICE OFF -->
+        
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star" style="color: #8bb6ff;"></i>
+                </div> <!-- RATING ----->
+
+                <div class="gift">
+                    <img src="https://phongvu.vn/images/icon_Gift.svg">
+                </div> <!-- GIFT -->
+        
+            </div> <!-- PRODUCT RIGHT TIVI -->
+            <div class="clear"></div>
+        </div> <!-- PRODUCT RIGHT TIVI WRAPPER ---------->
+
+    </div> <!-- BOT DETAIL --------------------->
+</div> <!-- WRAPPER DETAIL ------------------------------->
+
+<app-foot></app-foot>
