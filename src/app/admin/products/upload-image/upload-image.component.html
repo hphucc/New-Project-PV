@@ -1,0 +1,58 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<div class="content-wrapper" id="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-dashboard" (click) = "onLogout()"></i> Logout</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+  <hr><hr>
+<div class="container-fluid">
+ <!-- <div class="row">
+     <div class="col-12">
+      <button type="button" class="btn btn-info col-md-2 pull-right" routerLink="/admin"><i class="fas fa-undo-alt"></i>
+        Back admin</button>
+    </div> 
+  </div>-->
+  <div class="row">
+    <form>
+      <div class="form-row align-items-center">
+        <div class="col-auto my-1">
+          <input type="file" class="form-input" id="pic" width="70%" accept="png, jpg, jpge , PNG , JPG , JPEG"
+            (change)="onFileChange($event)">
+        </div>
+        <div class="col-auto my-1">
+          <button type="submit" class="btn btn-primary" (click)="upLoad()">UPLOAD</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+      <div class="m-2" *ngFor="let item of arrayImage">
+          <div class="col col-3">
+        <div class="card" style="width: 18rem;" *ngIf="item.url">
+          <img class="card-img-top" [src]="item.url" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">URL</h5>
+            <div class="input-group">
+              <input type="text" class="form-control" name="result" [(ngModel)]="item.url" placeholder="Some URL"
+                id="copy-input" #userinput>
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="copy-button" (click)="copyInputMessage(userinput)">
+                  Copy
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

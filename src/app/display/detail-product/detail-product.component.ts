@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { environment } from "./../../../environments/environment";
 import { Subscription, Observable,  } from "rxjs";
 import { Product } from 'src/app/modules/getToken/product.class';
+import { ItemCart } from 'src/app/modules/itemCart.model';
 
 declare var $;
 
@@ -21,10 +22,12 @@ export class DetailProductComponent implements OnInit {
   public subscription: Subscription;
   public subScriptionParam : Subscription; 
   public _product: Product;
+  public item: {};
 
   constructor(
     private activatedRoute : ActivatedRoute,
-    private productService : DataService
+    private productService : DataService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -62,7 +65,7 @@ export class DetailProductComponent implements OnInit {
   loadProduct(){
     this.activatedRoute.params.subscribe((data:Params)=>{
       this.products = data;
-      console.log(this.products);
+      // console.log(this.products);
     })
   }
 
@@ -135,5 +138,39 @@ export class DetailProductComponent implements OnInit {
     ]
   })
   } // showSlider_hmv
-
+  //Cart
+  addToCart(id: string) {
+    if (id) {
+      this.item = {
+        productCart: this.products,
+        quantity: 1
+      };
+      if (localStorage.getItem('cart') == null) {
+        let cart = [];
+        cart.push(JSON.stringify(this.item));
+        localStorage.setItem('cart', JSON.stringify(cart));
+      } else {
+        let cart: any = JSON.parse(localStorage.getItem('cart'));
+        let index: number = -1;
+        for (var i = 0; i < cart.length; i++) {
+          let item: ItemCart = JSON.parse(cart[i]);
+          if (item.productCart['_id'] == id) {
+            index = i;
+            break;
+          }
+        }
+        if (index == -1) {
+          cart.push(JSON.stringify(this.item));
+          localStorage.setItem('cart', JSON.stringify(cart));
+        }
+        else {
+          let item: ItemCart = JSON.parse(cart[index]);
+          item.quantity += 1;
+          cart[index] = JSON.stringify(item);
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+      }
+    }
+    this.router.navigateByUrl('/admin/cartproduct');
+  }
 }

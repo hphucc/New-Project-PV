@@ -1,0 +1,49 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<div class="content-wrapper" id="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-dashboard" (click) = "onLogout()"></i> Logout</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+  <hr>
+  <div class="container">
+    <div class="container-header" style="height: 50px; ">
+        <h1 style="text-align: center; color: brown;">List Detail Orders</h1>
+    </div>
+    <div class="container-footer" style="height: 50px;">
+        <table class = "table table-hover">
+          <thead> 
+              <tr class="table-admin" style="text-align: center; background-color: aqua;">
+                  <th>Id</th>
+                  <th>Status</th>
+                  <th>Buyer</th>
+                  <th>Description</th>
+                  <th>Total_amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                 <td>{{orders._id}}</td>
+                 <td>{{orders.status}}</td>
+                 <td> Name: {{orders.buyer?.name}} <br>
+                      Email: {{orders.buyer?.email}} <br>
+                      Address: {{orders.buyer?.address}} <br>
+                      Phone: {{orders.buyer?.phone}}
+                 </td>
+                 <td>{{orders.description}}</td>
+                 <td>{{orders.total_amount}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+<!-- /.content-wrapper -->

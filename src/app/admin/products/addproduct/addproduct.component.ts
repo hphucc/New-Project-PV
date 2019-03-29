@@ -11,16 +11,16 @@ import Swal from 'sweetalert2';
   styleUrls: ['./addproduct.component.css']
 })
 export class AddproductComponent implements OnInit, OnDestroy {
+ 
   public subcription: Subscription;
   public product: Product = {};
-  public image: any;
+
   constructor(
       private router: Router,
       public productservice: DataService
     ) { }
 
   ngOnInit() {
-    
   }
 
   onAdd(){
@@ -30,9 +30,8 @@ export class AddproductComponent implements OnInit, OnDestroy {
       }
     })
   }
-
+  
   onSubmit(frm){
-    console.log(frm.valid);
     if(frm.valid){
       this.onAdd();
     }
@@ -48,16 +47,5 @@ export class AddproductComponent implements OnInit, OnDestroy {
     if(this.subcription)
       this.subcription.unsubscribe();
   }
-  
-  handleFileInput(event) {
-    const oFReader = new FileReader();
-    const image = event.target.files[0];
-    oFReader.readAsDataURL(image);
-    oFReader.onload = (oFREvent) => {
-      this.product['images'] = oFREvent.target['restult'];
-    };
-    this.image = image;
-    console.log(this.image);
-  }
-  
+
 }

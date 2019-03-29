@@ -5,14 +5,15 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { Product } from "./../modules/getToken/product.class";
 
-const url = `${environment.apiPV}/api/v1/products/list`
-const urls = `${environment.apiPV}/api/v1/products/create`
-const urlEdit = `${environment.apiPV}/api/v1/products/update`
-const urlDetail = `${environment.apiPV}/api/v1/products/details`
-const urlActive = `${environment.apiPV}/api/v1/products/active`
-const urlDeactive = `${environment.apiPV}/api/v1/products/deactive`
-const urlDeActiveList = `${environment.apiPV}/api/v1/products/list?is_active=0`
-const urlImage =`${environment.apiPV}/api/v1/upload/image`
+const url = `${environment.apiPV}/api/v1/products/list`;
+const urls = `${environment.apiPV}/api/v1/products/create`;
+const urlEdit = `${environment.apiPV}/api/v1/products/update`;
+const urlDetail = `${environment.apiPV}/api/v1/products/details`;
+const urlActive = `${environment.apiPV}/api/v1/products/active`;
+const urlDeactive = `${environment.apiPV}/api/v1/products/deactive`;
+const urlDeActiveList = `${environment.apiPV}/api/v1/products/list?is_active=0`;
+const urlImage =`${environment.apiPV}/api/v1/products`;
+const urlDeleteImage=`${environment.apiPV}/api/v1/products`;
 
 @Injectable({
   providedIn: 'root'
@@ -39,15 +40,16 @@ export class DataService {
   getAllproduct(product: Product): Observable<Product> {
     return this.http.get<Product>(url);
   }
-//Them san pham
-  addAllproduct(product: Product): Observable<Product[]> {
-    return this.http.post<Product[]>(urls, product, { headers: this.headers });
-  }
   // Show san pham detail
   getIdProductDetail(id: string): Observable<Product> {
     return <Observable<any>>this.http.get(`${urlDetail}/${id}`);
   }
-//Updata san pham
+
+//Them san pham
+  addAllproduct(product: Product): Observable<Product[]> {
+    return this.http.post<Product[]>(urls, product, { headers: this.headers });
+  }
+//Updata san pham 
   updateProduct(product: Product): Observable<Product> {
     return this.http.put<Product>(`${urlEdit}/${product['_id']}`, product, { headers: this.headers });
   }
@@ -68,7 +70,11 @@ export class DataService {
     return this.http.put<Product>(`${urlActive}/${product['_id']}`, product, { headers: this.headers });
   }
 //upload image 
-  // postImages(product: Product): Observable<Product>{
-  //   return this.http.post<Product>(urlImage, product, {headers: this.headers});
-  // }
+  postImages(id:string, images:{}): Observable<Product[]>{
+    return this.http.post<Product[]>(`${urlImage}/${id}/images`, images, {headers: this.headers});
+  }
+  //Delete image
+  deleteImage(id:string): Observable<Product>{
+    return this.http.delete<Product>(`${urlDeleteImage}/${id}/images?`, {headers: this.headers})
+  }
 }

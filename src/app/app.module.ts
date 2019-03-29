@@ -12,6 +12,8 @@ import { AuthTokenService } from "./services/auth-token.service";
 import { AuthGuard } from "./auth/auth-login.gaurd";
 import { DataService } from "./services/data.service";
 import { SerCategoryService } from "./admin/category/service/ser-category.service";
+//orders
+import { OrderService } from "./admin/oders/service/order.service";
 
 
 @NgModule({
@@ -31,7 +33,8 @@ import { SerCategoryService } from "./admin/category/service/ser-category.servic
     AuthTokenService,
     AuthGuard,
     DataService,
-    SerCategoryService
+    SerCategoryService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

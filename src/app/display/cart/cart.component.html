@@ -1,0 +1,120 @@
+<app-header></app-header>
+
+<div class="cart_wrapper">
+
+  <div class="cart_content">
+    <div class="left_cart" >
+      <div class="btn_section">
+        <button><div class="btn_back" routerLink="">tiếp tục mua hàng</div></button>
+        <div class="btn_delete">xóa giỏ hàng</div>
+
+        <div class="clear"></div>
+      </div> <!-- BTN SECTION ------>
+
+
+
+<!-- --------------********************--------------- -->
+    <div class="list_product_cart" *ngFor="let item of items">
+
+        <div class="product_cart">
+          <div class="img_product_cart">
+            <img src="{{item.productCart.images[0]}}" alt="">
+          </div> <!-- IMG PRODUCT CART -->
+
+          <div class="title_del_product_cart">
+            <div class="title_product_cart">{{item.productCart.title}}</div> <!-- TITLE PRODUCT CART -->
+            <div class="del_product_cart"><i class="fas fa-trash-alt" (click)="remove(item.productCart._id)"> Xóa khỏi giỏ hàng</i></div>
+          </div> <!-- TITLE DELETE PRODUCT CART -->
+
+          <div class="price_quantity_product_cart">
+            <div class="price_product_cart">{{item.productCart.price | currency:'VND':'' }}đ</div> <!-- PRICE PRODUCT CART -->
+            <div class="quantity_product_cart">
+              <div class="minus" (click)="subProduct(item.productCart._id)"><i class="fas fa-minus"></i></div>
+              <div class="num">{{item.quantity}}</div>
+              <div class="plus" (click)="addProduct(item.productCart._id)">+</div>
+
+              <div class="clear"></div>
+            </div> <!-- QUANTITY PRODUCT CART -->
+
+            
+          </div> <!-- PRICE QUANTITY PRODUCT CART ----->
+
+          <div class="sum_price">= {{item.productCart.price * item.quantity | currency: 'VND':''}}đ</div> <!-- SUM PRICE ---------->
+
+          <div class="clear"></div>
+      </div> <!-- PRODUCT CART ----------------->
+
+    </div> 
+ <!-- --------------********************--------------- -->
+
+
+    </div> <!-- LEFT CART ------------------------->
+
+    <div class="right_cart">
+      <div class="top_right_cart">
+
+        <div class="text_tt">
+          <div class="title_tt">Tạm tính:</div>
+          <div class="price_tt">{{total}}</div>
+
+          <div class="clear"></div>
+        </div> <!-- TEXT TẠM TÍNH -->
+
+        <div class="text_giam_gia">
+          <div class="title_gg">Giảm giá:</div>
+          <div class="price_gg">-0đ</div>
+
+          <div class="clear"></div>
+        </div> <!-- TEXT GIẢM GIÁ -->
+
+        <div class="input_coupon">
+          <input type="text" placeholder="nhập mã giảm giá tại đây" />
+        </div> <!-- INPUT DISCOUNT -->
+
+        <div class="free_ship">
+            Phong Vũ miễn phí vận chuyển cho các đơn hàng trị giá trên 500.000 đ
+        </div> <!-- FREE SHIP -->
+
+        <div class="bieu_gia">Tham khảo biểu phí dịch vụ</div>
+
+      </div> <!-- TOP RIGHT CART -------->
+      <div class="bot_right_cart">
+        <div class="text_price_ship">
+          <div class="title_price_ship">Phí vận chuyển:</div>
+          <div class="num_price_ship">0đ</div>
+
+          <div class="clear"></div>
+        </div> <!-- PHÍ VẬN CHUYỂN -->
+
+        <div class="text_sum_price_ship">
+          <div class="title_sum_price_ship">Thành tiền:</div>
+          <div class="num_sum_price_ship">{{total}}</div>
+
+          <div class="vat">(Đã bao gồm VAT)</div>
+          <div class="clear"></div>
+        </div> <!-- THÀNH TIỀN -->
+
+        <div class="cart_best_price_note">
+            Lựa chọn hình thức thanh toán trực tuyến và VNPAY-QR để được giá tốt hơn nữa ở bước thanh toán tiếp theo
+        </div> <!-- CART BEST PRICE NOTE -->
+
+        <div class="btn_pay" routerLink="/checkout/">
+          thanh toán
+        </div> <!-- BTN PAY -->
+
+      </div> <!-- BOT RIGHT CART -------------->
+
+    </div> <!-- RIGHT CART ------------------------>
+
+    <!--<div class="checkout_now">
+      <img src="https://image.useinsider.com/phongvu/c83/9IfdilFckxCLKYYja1NF1537966982.png" alt="">
+      Thanh toán ngay không cần đăng nhập
+    </div>  CHECK OUT -->
+
+    <div class="clear"></div>
+  </div> <!-- CART CONTENT ---------------------------------->
+
+  
+</div> <!-- CART WRAPPER ---------------------------------------------------------->
+
+<app-foot></app-foot>

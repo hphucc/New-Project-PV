@@ -1,4 +1,5 @@
-<!-- <app-appheader></app-appheader> -->
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
 
   <!-- Content Header (Page header) -->
   <section class="content-header">
@@ -15,14 +16,9 @@
 
 
 <div class="row" style="width: 800px; margin: 0 auto;">
-    <h1 style="text-align: center;">Thông Tin Sản Phẩm</h1>
+    <h1 style="text-align: center;">Product Information</h1>
     <div >
       <form (ngSubmit)="onSubmit(frm)" #frm="ngForm">
-        <!--[(ngModel)]="product.id"  -->
-        <!-- <div class="form-group">
-          <h4>ID:</h4>
-          <input class="form-control" [(ngModel)]="product.id" name="txtid" #id="ngModel">
-        </div> -->
         <div class="form-group">
           <h4>Title:</h4>
           <input class="form-control" name="txttitle" [(ngModel)]="product.title" #title="ngModel" required>
@@ -30,11 +26,12 @@
             <strong>Title is required</strong>
           </div>
         </div>
-        <div class="form-group">
+
+        <!-- <div class="form-group">
           <h4>Images:</h4>
-          <img [src]="product?.images" [(ngModel)]="product.images" #images="ngModel" [ngModelOptions]="{standalone: true}">
-          <input type="file" class="form-control" (change)=handleFileInput($event) required>
-        </div>
+          <input  type="text" class="form-control" [(ngModel)]="dataimages" #image="ngModel" name="images" >
+        </div> -->
+
         <div class="form-group">
           <h4>Price:</h4>
           <input type="number" class="form-control"name="txtprice" [(ngModel)]="product.price" #price="ngModel" >
@@ -60,13 +57,12 @@
             <option value="Hard Disk">Hard Disk</option>
             <option value="Mainboard">Mainboard</option>
             <option value="Laptop">Laptop</option>
+            <option value="Laptop">Phone</option>
           </select>
           <div class="alert alert-danger" *ngIf="(frm.submitted && category.pristine) || (category.error?.required && category.touched)">
             <strong>Category is required</strong>
           </div>
         </div>
-
-
 
         <div class="form-group">
           <h4>Status:</h4>
@@ -81,7 +77,7 @@
         </div>
       </div>
 
-        <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;"  >Thêm</button>
+        <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;">Add</button>
       </form>
     </div>
   </div>

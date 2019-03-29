@@ -1,0 +1,40 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Dashboard
+    <small>Version 2.0</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#"><i class="fa fa-dashboard" (click)="onLogout()"></i> Logout</a></li>
+    <li class="active">Dashboard</li>
+  </ol>
+</section>
+
+<div class="row" style="width: 800px; margin: 0 auto;">
+  <h1 style="text-align: center;">Edit Sub_Category Information</h1>
+  <div>
+    <!--  -->
+    <form (ngSubmit)="onUpdate(subname.value)" #frm="ngForm">
+      <!--  -->
+      
+      <div class="form-group">
+        <h4>Sub_Category:</h4>
+        <tag-input type="text" name="sub_category" [(ngModel)]="category.sub_category" #subcategory="ngModel" 
+        [identifyBy]="'name'" [displayBy]="'name'" 
+            (onSelect)="onSelected($event)"
+            (onRemove)="onItemRemoved($event)">
+            </tag-input>
+      </div>
+      <div class="form-group">
+          <input type="text" name="subcate" [(ngModel)]="name" #subname="ngModel">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;">Edit Sub_Category</button>
+
+    </form>
+  </div>
+</div>

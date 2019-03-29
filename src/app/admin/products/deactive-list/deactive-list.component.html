@@ -39,7 +39,7 @@
             <tr class="table-admin" *ngFor="let item of _product | paginate: { itemsPerPage: 5, currentPage: p }">
                 <td>{{item.id}}</td>
                 <td>{{item.title}}</td>
-                <td><img src="{{item.images}}" style="width:100px; height: 100px;"></td>
+                <td><img src="{{item.images[0]}}" style="width:100px; height: 100px;"></td>
                 <td>{{item.price}}</td>
                 <td>{{item.quantity}}</td>
                 <td>{{item.is_active}}</td>

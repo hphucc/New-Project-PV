@@ -34,7 +34,6 @@ export class BodyComponent implements OnInit, OnDestroy {
   show(){
     this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
       this._product = data['docs'];
-      console.log(this._product);
     });
   }
 
@@ -79,7 +78,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   } // showSlider
 
   showSliderhmv(){
-    $('.responsivehmv').slick({
+    $('.responsive-hmv').slick({
       dots: true,
       infinite: false,
       speed: 300,
@@ -111,6 +110,6 @@ export class BodyComponent implements OnInit, OnDestroy {
       }
     ]
   })
-  } // showSlider_hmv
+  } // showSlider
 
 }

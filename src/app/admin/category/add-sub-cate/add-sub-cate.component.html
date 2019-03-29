@@ -17,21 +17,12 @@
 <div class="row" style="width: 800px; margin: 0 auto;">
   <h1 style="text-align: center;">Category Information</h1>
   <div>
-    <!--  -->
-    <form (ngSubmit)="onsubmit(frm)" #frm="ngForm">
-      <!--  -->
-      <div class="form-group">
-          <h4>Name Category:</h4>
-          <input class="form-control" name="txtname"  [(ngModel)]="_category.name" #name="ngModel" disabled>
-        </div>
+    <form (ngSubmit)="onsubmit(sub_category.value)" #frm="ngForm">
+      
 
       <div class="form-group">
         <h4>Sub_Category:</h4>
-        <tag-input name="txtsub_category" [(ngModel)]="_category.sub_category"  #subcategory="ngModel" [identifyBy]="'name'" [displayBy]="'name'">
-        </tag-input>
-        <!-- <div class="alert alert-danger" *ngIf="(frm.submitted && sub_category.pristine) || (sub_category.error?.required && sub_category.touched)">
-            <strong>Sub_category is required</strong>
-          </div> -->
+        <input type="text" #sub_category="ngModel" name="sub_category" [(ngModel)]="sub">
       </div>
 
       <button type="submit" class="btn btn-primary" style="margin-bottom: 100px;">Add Sub_Category</button>

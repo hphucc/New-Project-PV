@@ -42,12 +42,13 @@
                 </td>
                 <td>
                   <button class="btn btn-success" [routerLink]="['/admin/addsubcate', item._id]">Add-Sub</button>
+                  <button class="btn btn-danger" [routerLink]="['/admin/editsubcategory', item._id]">Edit-Sub</button>
                 </td>
                 <td>{{item.is_active}}</td>
                 <td>
-                  <button type="button" style="margin-bottom: 3px;" class="btn btn-success" [routerLink]="['/admin/editproduct', item.id]">Edit</button>
+                  <button type="button" style="margin-bottom: 3px;" class="btn btn-success" [routerLink]="['/admin/editcategory', item._id]">Edit</button>
                   <br>
-                  <button type="button" class="btn btn-danger" (click)="onDeActive(item.id)">DeActive</button>
+                  <button type="button" class="btn btn-danger" (click)="onDeActive(item._id)">DeActive</button>
                 </td>
             </tr>
             <tr>

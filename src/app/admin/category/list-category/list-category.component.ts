@@ -22,7 +22,7 @@ export class ListCategoryComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subcription = this.sercategory.getAllCategory(this._category).subscribe(data =>{
       this._category = data;
-      // console.log(data);
+      // 
     })
   }
 
@@ -30,4 +30,23 @@ export class ListCategoryComponent implements OnInit, OnDestroy {
     if(this.subcription)
       this.subcription.unsubscribe();
   }
+
+  //deactive
+ loadproduct(){
+  this.subcription = this.sercategory.getAllCategory(this._category).subscribe(data=>{
+    this._category = data;
+   
+  });
+ }
+
+ onDeActive(id: string){
+  this.sercategory.getCategoryByID(id).subscribe(data =>{
+    // console.log(data);
+    this._category = data;
+    this.sercategory.DeactiveCate(this._category).subscribe(data =>{
+      this.loadproduct();
+      this.router.navigate(['/admin/deactivecate/:id']);
+    })
+  })
+}
 }

@@ -189,7 +189,7 @@
 
                     <div class="button_fl_bot">
                         <div class="buy">Mua ngay</div> <!-- BUY -->
-                        <div class="add_to_card">Thêm vào giỏ hàng</div>
+                        <div class="add_to_card" (click)="addToCart(products._id)">Thêm vào giỏ hàng</div>
 
                         <div class="clear"></div>
                     </div> <!-- BUTTON FLASH BOT -->
@@ -231,7 +231,7 @@
     <div class="bot_detail">
 
         <div class="product_right_tivi_wrapper responsivehmv rowTwoProduct-responsive">
-            <div class="product_right_tivi"  *ngFor="let item of _product" [routerLink]="['detail/', item.id]"> 
+            <div class="product_right_tivi"  *ngFor="let item of _product" [routerLink]="['/detail/', item.id]"> 
                 <div class="img_right_tivi">
                     <img [src]="item.images[0]" alt="">
                 </div> <!-- IMG RIGHT TIVI -->

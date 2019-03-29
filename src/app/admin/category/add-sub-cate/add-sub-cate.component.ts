@@ -12,37 +12,28 @@ import { SerCategoryService } from "./../service/ser-category.service";
 })
 export class AddSubCateComponent implements OnInit {
 
-  public subcription: Subscription;
-  public subcriptionParams: Subscription;
-  public _category: Category = {
-    is_active: true,
-    sub_category: []
-  };
+  public id:string;
+  public _name = {
+    name:''
+  }
 
   constructor(
-    private http: HttpClient,
-    private router: Router,
     public categoryservice: SerCategoryService,
-    private activeRouteService: ActivatedRoute
+    private activeRouteService: ActivatedRoute,
+    private router:Router
   ) { }
 
   ngOnInit() {
-    this.subcriptionParams = this.activeRouteService.params.subscribe((data: Params) => {
-      console.log(data);
-      this.subcription = this.categoryservice.getCategoryByID(data['id']).subscribe((categorys: Category) => {
-        console.log(categorys);
-        this._category = categorys;
-      })
+    this.activeRouteService.params.subscribe((data: Params) => {
+      this.id = data['id']
+      // console.log(this.id);
     })
   }
-  onAddSub() {
-    console.log(this._category);
-    this.categoryservice.addSubCateByID(this._category).subscribe((data: Category) => {
-      console.log(data);
-      // this.router.navigateByUrl('/admin');
-    });
-  }
   onsubmit(frm){
-    this.onAddSub();
+    this._name.name = frm;
+    this.categoryservice.addSubCateByID(this.id, this._name).subscribe(data=>{
+      this.router.navigateByUrl('/admin/listcategory');
+      // console.log(data);
+    })
   }
 }

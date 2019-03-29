@@ -26,6 +26,7 @@ export class EditproductComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.subcriptionParams = this.activeRouteService.params.subscribe((data: Params) => {
+      console.log(data);
       this.subcription = this.productservice.getProductByID(data['id']).subscribe((products: Product) => {
         this.product = products;
       })

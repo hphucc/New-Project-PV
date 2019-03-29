@@ -1,0 +1,62 @@
+<app-appheader></app-appheader>
+<app-appmenu></app-appmenu>
+
+<div class="content-wrapper" id="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Dashboard
+      <small>Version 2.0</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li><a href="#"><i class="fa fa-dashboard" (click) = "onLogout()"></i> Logout</a></li>
+      <li class="active">Dashboard</li>
+    </ol>
+  </section>
+  <hr>
+  <div class="container">
+    <div class="container-header" style="height: 50px; ">
+        <h1 style="text-align: center; color: brown;">List Orders</h1>
+    </div>
+    <div class="container-footer" style="height: 50px;">
+        <table class = "table table-hover">
+          <thead>
+            <tr class="table-admin" style="text-align: center; background-color: aqua;">
+                <th >ID</th>
+                <th>Buyer</th>
+                <th>Status</th>
+                <th>Action</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody>
+          <!--  -->
+            <tr class="table-admin" *ngFor="let item of orders.docs | paginate : {itemsPerPage:10, currentPage: p}" >
+                <td>{{item.id}}</td>
+                <td>Name: {{item.buyer?.name}} <br>
+                    Email: {{item.buyer?.email}}<br>
+                    Phone: {{item.buyer?.phone}}
+                </td>
+                <td>{{item.status}}</td>
+                <td>
+                  <button type="button" class="btn btn-danger" (click)="onPending(item.id)">Pending</button>
+                  <button type="button" class="btn btn-success" (click)="onSuccess(item.id)">Succes</button>
+                </td>
+                <td>
+                  <button type="button" class="btn btn-primary" (click)="onDetail(item.id)" [routerLink]="['/admin/detailOrder', item.id]">Detail</button>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        <div class="row">
+          <pagination-controls 
+              (pageChange)="p = $event"  
+              maxSize="7"
+              previousLabel="Previous"
+              nextLabel="Next">
+          </pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /.content-wrapper -->
