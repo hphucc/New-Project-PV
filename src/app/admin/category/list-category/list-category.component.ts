@@ -45,7 +45,7 @@ export class ListCategoryComponent implements OnInit, OnDestroy {
     this._category = data;
     this.sercategory.DeactiveCate(this._category).subscribe(data =>{
       this.loadproduct();
-      this.router.navigate(['/admin/deactivecate/:id']);
+      // this.router.navigate(['/admin/deactivecate/:id']);
     })
   })
 }

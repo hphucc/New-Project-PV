@@ -179,7 +179,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgxStripeModule.forRoot()
+    NgxStripeModule.forRoot('pk_test_BHUOafmeJtUMRjSTplsjt9Z9')
   ],
   exports: [RouterModule]
 })

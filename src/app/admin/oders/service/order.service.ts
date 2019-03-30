@@ -7,7 +7,7 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map, retry } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 
-const urlListOders=`${environment.apiPV}/api/v1/orders/list?page=1&limit=10`;
+const urlListOders=`${environment.apiPV}/api/v1/orders/list?page=1&limit=100`;
 const urlCheckOrder=`${environment.apiPV}/api/v1/orders/check-status`;
 const urlDetailOders=`${environment.apiPV}/api/v1/orders/details`;
 

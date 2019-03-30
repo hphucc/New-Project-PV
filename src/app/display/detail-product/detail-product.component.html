@@ -3,35 +3,21 @@
 <div class="wrapper_detail">
     <div class="top_detail"  *ngIf="products">
         <div class="left_top_detail">
-            <div class="img_big_td">
+
+            <div class="img_big_td" *ngIf="!images">
                 <img src="{{products.images[0]}}" alt="IMG BIG TOP DETAIL">
             </div> <!-- IMG BIG TOP DETAIL -->
 
-            <div class="img_small_td">
-                <div class="thb_td">
+            <div class="img_big_td" *ngIf="images">
+                    <img src="{{images}}" alt="IMG BIG TOP DETAIL">
+                </div> <!-- IMG BIG TOP DETAIL -->
+
+            <div class="img_small_td" >
+                <div class="thb_td" *ngFor="let thb of products.images">
                     <div class="img_thb_td">
-                        <img [src]="products.images[0   ]" alt="IMG BIG TOP DETAIL">
+                        <img src="{{thb}}" alt="IMG BIG TOP DETAIL" (click)="onChange(thb)">
                     </div> <!-- IMG THUMBNAIL TD-->
                 </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
-
-                <div class="thb_td">
-                    <div class="img_thb_td">
-                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
-                    </div> <!-- IMG THUMBNAIL TD-->
-                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
-
-                <div class="thb_td">
-                    <div class="img_thb_td">
-                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
-                    </div> <!-- IMG THUMBNAIL TD-->
-                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
-
-                <div class="thb_td">
-                    <div class="img_thb_td">
-                        <img [src]="products.images[0]" alt="IMG BIG TOP DETAIL">
-                    </div> <!-- IMG THUMBNAIL TD-->
-                </div> <!-- THUMBNAIL SMALL TOP DETAIL -->
-
 
                 <div class="clear"></div>
 
@@ -116,7 +102,7 @@
                         <div class="price">
                             <div class="gbl_price">
                                 <div class="text_price">Giá bán lẻ</div> <!-- TEXT PRICE -->
-                                <div class="num_price">16.390.000đ</div> <!-- NUM PRICE -->
+                                <div class="num_price">{{ products.price * ((100-products.discount)/100) | currency:' ':'symbol':'2.3-6' }}đ</div> <!-- NUM PRICE -->
 
                                 <div class="clear"></div>
                             </div> <!-- GIÁ BÁN LẺ ---->  
@@ -129,7 +115,7 @@
 
                             <div class="gonl">
                                 <div class="text_gonl">Giá tốt Online</div> <!-- TEXT ONL -->
-                                <div class="num_gonl">13.290.000đ</div> <!-- NUM ONL -->
+                                <div class="num_gonl">{{products.price}}đ</div> <!-- NUM ONL -->
                                 <span class="chu_thich_gfs">(Giá sau khi áp dụng đầy đủ cộng dồn khuyến mãi bên dưới)</span>
                                 <div class="clear"></div>
                             </div> <!-- GIÁ ONLINE -->
@@ -240,9 +226,13 @@
                     {{item.title}}
                 </div> <!-- DETAIL -->
         
-                <div class="price-off">
-                    {{item.price}}
+                <div class="price-off_products_hmv">{{ item.price * ((100-item.discount)/100) | currency:' ':'symbol':'2.3-6' }}đ
+                    <span style="font-size: 11px; font-style:italic; font-weight: lighter; color: #333;">(Giá bán lẻ)</span>
                 </div> <!-- PRICE OFF -->
+
+                <div class="price-on_products_hmv"> {{item.price}}
+                    <span style="font-size: 11px; font-style:italic; font-weight: lighter; color: #333;">(Giá tốt online)</span>
+                </div> <!-- PRICE ON -->
         
                 <div class="rating">
                     <i class="fas fa-star"></i>

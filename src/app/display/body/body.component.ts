@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { DataService } from "./../../services/data.service";
 import { Subscription, Observable } from "rxjs";
 import { Product } from "./../../modules/getToken/product.class";
+import { SerCategoryService } from "./../../admin/category/service/ser-category.service";
 
 declare var $;
 
@@ -15,12 +16,19 @@ export class BodyComponent implements OnInit, OnDestroy {
   public observable = Observable;
   public subcription: Subscription;
   public _product: Product = [];
+  public _category: any = [];
   // public test = false;
   constructor(private router: Router,
-      public productservice: DataService
+      public productservice: DataService,
+      public sercategory: SerCategoryService
     ) { }
     
   async ngOnInit() {
+
+
+
+    this.showCategory()
+
     setTimeout(()=> {
       this.show()
     },0)
@@ -30,10 +38,21 @@ export class BodyComponent implements OnInit, OnDestroy {
     setTimeout(()=>{
       this.showSliderhmv()
     }, 2000)
+    setTimeout(()=>{
+      this.buttonClick();
+    }, 2000)
   }
   show(){
     this.subcription = this.productservice.getAllproduct(this._product).subscribe(data=>{
       this._product = data['docs'];
+      // console.log(this._product);
+    });
+  }
+
+  showCategory() {
+    this.sercategory.getAllCategory(this._category).subscribe(data => {
+      this._category = data;
+      // console.log(this._category);
     });
   }
 
@@ -41,7 +60,14 @@ export class BodyComponent implements OnInit, OnDestroy {
     if(this.subcription)
       this.subcription.unsubscribe();
   }
-  
+
+
+  buttonClick(){
+    $(document).on('click', '.banner_foot li', function() {
+      $(this).addClass('active').siblings().removeClass('active')
+    })
+  }
+
   showSlider(){
     $('.responsive').slick({
       dots: true,
@@ -78,7 +104,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   } // showSlider
 
   showSliderhmv(){
-    $('.responsive-hmv').slick({
+    $('.responsivehmv').slick({
       dots: true,
       infinite: false,
       speed: 300,
@@ -110,6 +136,7 @@ export class BodyComponent implements OnInit, OnDestroy {
       }
     ]
   })
-  } // showSlider
+  } // showSlider_hmv
+
 
 }

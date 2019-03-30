@@ -22,6 +22,7 @@ export class DetailProductComponent implements OnInit {
   public subscription: Subscription;
   public subScriptionParam : Subscription; 
   public _product: Product;
+  public images: string;
   public item: {};
 
   constructor(
@@ -51,13 +52,18 @@ export class DetailProductComponent implements OnInit {
     });
   }
 
+  // Click Thumbnail
+  onChange(image){
+    this.images = image;
+  }
+
   // show product Detail
   showProductDetail() {
     this.subscription = this.activatedRoute.params.subscribe((data: Params) => {
       let id = data['id'];
       this.subscription = this.productService.getIdProductDetail(id).subscribe((item: string) => {
         this.products = item;
-        console.log(this.products); 
+        // console.log(this.products); 
       })
     })
   }
