@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { AdminComponent } from './admin/admin.component';
 import { AppsettingsComponent } from './components/appsettings/appsettings.component';
 import { HttpClientModule } from "@angular/common/http";
+
 //service
 import { AuthTokenService } from "./services/auth-token.service";
 import { AuthGuard } from "./auth/auth-login.gaurd";

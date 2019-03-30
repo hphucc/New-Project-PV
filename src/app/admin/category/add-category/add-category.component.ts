@@ -27,9 +27,9 @@ export class AddCategoryComponent implements OnInit {
   ngOnInit() { }
 
   onAdd() {
-    console.log(this.category);
+    // console.log(this.category);
     this.sercategoryService.addAllCategory(this.category).subscribe(data=>{
-      console.log(data);
+      // console.log(data);
       if (data && data['_id']) {
         this.router.navigate(['/admin/listcategory']);
       }

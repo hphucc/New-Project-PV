@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TagInputModule } from "ngx-chips";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxStripeModule } from 'ngx-stripe';
 //Component
 import { LoginComponent } from './login/login/login.component';
 import { NotFoundComponent } from './login/not-found/not-found.component';
@@ -178,7 +179,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    
+    NgxStripeModule.forRoot()
   ],
   exports: [RouterModule]
 })

@@ -9,18 +9,19 @@
       <div class="col-md-12">
         <h2 class="text-center">Checkout</h2>
         <div class="container">
-          <form>
-            <!-- autocomplete="off"
+          <form
+            autocomplete="off"
             novalidate
             #frmCheckOut="ngForm"
-            (ngSubmit)="onSubmitForm(frmCheckOut)" -->
-          
+            (ngSubmit)="onSubmitForm(frmCheckOut)"
+            >
+          <!-- [formGroup]="stripeTest" -->
             <div class="row">
               <div class="col-md-6">
                 <h3>Billing Address</h3>
                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                <input >
-                  <!-- type="text" 
+                <input 
+                  type="text" 
                   id="fname" 
                   placeholder="John M. Doe"
                   name="txtfirstname"
@@ -28,42 +29,42 @@
                   pattern="^[a-zA-Z]*$"
                   minlength="3"
                   (ngModel)="checkout.name"
-                  #firstname="ngModel" -->
-                
+                  #firstname="ngModel"
+                >
                 <div class="showError">
-                  <!-- <span 
+                  <span 
                     class="label label-danger" 
                     *ngIf="(frmCheckOut.submitted && firstname.pristine) || firstname.dirty && firstname.errors?.required"
                   ><i class="fas fa-times"></i> Please enter Frist Name
-                  </span> -->
-                  <!-- <span 
+                  </span>
+                  <span 
                     class="label label-danger" 
                     *ngIf="firstname.dirty && firstname.errors?.minlength"
                   ><i class="fas fa-times"></i> First Name at least 3 characters
-                  </span> -->
-                  <!-- <span 
+                  </span>
+                  <span 
                     class="label label-danger" 
                     *ngIf="firstname.dirty && firstname.errors?.pattern"
                   ><i class="fas fa-times"></i> First Name wrong format
-                  </span> -->
-                  <!-- <span class="label label-success" *ngIf="!firstname.errors">
+                  </span>
+                  <span class="label label-success" *ngIf="!firstname.errors">
                       <i class="fas fa-check"></i> Frist Name Invalid
-                  </span> -->
+                  </span>
                 </div>
                 
                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                <input >
-                  <!-- type="text" 
+                <input 
+                  type="text" 
                   id="email" 
                   placeholder="john@example.com"
                   name="txtEmail"
                   required="required"
                   pattern="[a-zA-Z0-9,-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
                   (ngModel)="checkout.email"
-                  #email="ngModel" -->
-                
+                  #email="ngModel"
+                >
                 <div class="showError">
-                  <!-- <span 
+                  <span 
                     class="label label-danger" 
                     *ngIf="(frmCheckOut.submitted && email.pristine) || email.dirty && email.errors?.required"
                   ><i class="fas fa-times"></i> Please enter Email
@@ -75,22 +76,22 @@
                   </span>
                   <span class="label label-success" *ngIf="!email.errors">
                       <i class="fas fa-check"></i> Email Invalid
-                  </span> -->
+                  </span>
                 </div>
   
                 <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-                <input >
-                  <!-- type="text" 
+                <input 
+                  type="text" 
                   id="adr" 
                   placeholder="542 W. 15th Street"
                   name="txtAddress"
                   required="required"
                   minlength="3"
                   (ngModel)="checkout.address"
-                  #address="ngModel" -->
-                
+                  #address="ngModel"
+                >
                 <div class="showError">
-                  <!-- <span 
+                  <span 
                     class="label label-danger" 
                     *ngIf="(frmCheckOut.submitted && address.pristine) || address.dirty && address.errors?.required"
                   ><i class="fas fa-times"></i> Please enter Address
@@ -102,21 +103,21 @@
                   </span>
                   <span class="label label-success" *ngIf="!address.errors">
                       <i class="fas fa-check"></i> Address Invalid
-                  </span> -->
+                  </span>
                 </div>
   
                 <label for="city"><i class="fa fa-institution"></i> Phone</label>
-                <input >
-                  <!-- type="text" 
+                <input 
+                  type="text" 
                   placeholder="012345678"
                   name="txtCity"
                   required="required"
                   minlength="3"
                   (ngModel)="checkout.phone"
-                  #city="ngModel" -->
-                
+                  #city="ngModel"
+                >
                 <div class="showError">
-                  <!-- <span 
+                  <span 
                     class="label label-danger" 
                     *ngIf="(frmCheckOut.submitted && city.pristine) || city.dirty && city.errors?.required"
                   ><i class="fas fa-times"></i> Please enter City
@@ -128,26 +129,26 @@
                   </span>
                   <span class="label label-success" *ngIf="!city.errors">
                       <i class="fas fa-check"></i> City Invalid
-                  </span> -->
+                  </span>
                 </div>
   
                 <div class="container-fuild">
                   
                   <div class="col-50">
                     <label for="zip">Postcode</label>
-                    <input >
-                      <!-- type="text" 
+                    <input 
+                      type="text" 
                       id="zip" 
                       placeholder="10001"
                       name="txtZip"
                       required="required"
                       pattern="[0-9]*"
                       (ngModel)="checkout.postcode"
-                      #postcode="ngModel" -->
-                    
+                      #postcode="ngModel"
+                    >
                   </div>
                   <div class="showError">
-                    <!-- <span 
+                    <span 
                       class="label label-danger" 
                       *ngIf="(frmCheckOut.submitted && postcode.pristine) || postcode.dirty && postcode.errors?.required"
                     ><i class="fas fa-times"></i> Please enter Postcode
@@ -159,16 +160,16 @@
                     </span>
                     <span class="label label-success" *ngIf="!postcode.errors">
                         <i class="fas fa-check"></i> Postcode Invalid
-                    </span> -->
+                    </span>
                   </div>
                 </div>
               </div>
   
               <div class="col-md-6">
                 <h3>Cart 
-                  <!-- <span class="price pull-right" style="color:rgb(187, 49, 49);text-align:right">
+                  <span class="price pull-right" style="color:rgb(187, 49, 49);text-align:right">
                     <i class="fa fa-shopping-cart"></i> <b>{{totalQtyProduct}}</b>
-                  </span> -->
+                  </span>
                 </h3>
                 <table class="table table-bordered table-hover">
                   <thead>
@@ -178,14 +179,14 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <!-- <tr *ngFor="let item of listAddToCart">
+                    <tr *ngFor="let item of listAddToCart">
                       <td>{{ item.productCart.title }}</td>
                       <td>{{ item.productCart.price | currency:' ':'symbol':'2.3-6' }}</td>
                     </tr>
                     <tr>
                         <td align="right">Total</td>
                         <td style="background:rgb(187, 49, 49);color:white;font-weight: 700">{{total | currency:' ':'symbol':'2.3-6' }} Đồng</td>
-                      </tr> -->
+                      </tr>
                   </tbody>
                 </table>
                 
@@ -201,17 +202,17 @@
                 </div>
   
                 <label for="ccnum">Credit card number</label>
-                <!-- <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card> -->
+                <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
   
                 <label for="description">Description</label>
-                <input >
-                  <!-- type="text" 
+                <input 
+                  type="text" 
                   id="description"
                   name="txtDescription" 
                   placeholder="Note..."
                   (ngModel)="checkout.description"
-                  #description="ngModel" -->
-                
+                  #description="ngModel"
+                >
   
               </div>
   

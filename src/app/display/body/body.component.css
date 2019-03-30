@@ -17,6 +17,7 @@
     width: 19%;
     float: left;
     background: #fff;
+    /* border: 1px solid red; */
 }
 
 .left_content > li {
